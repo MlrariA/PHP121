@@ -5,7 +5,7 @@
 <body>
 <p>hello world</p>
 <?php
-if (isset($_POST["login"])) {
+if  ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["login"])) {
     foreach ($_POST["login"] as $key => $value) {
         echo sprintf("<p>%s: %s</p>", $key, $value);
     }
